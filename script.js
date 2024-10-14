@@ -382,8 +382,8 @@ function draw() {
 }
 
 function drawGrid() {
-    context.strokeStyle = "#818283"; // Set grid color to black
-    context.lineWidth = 0.1; // Set line width for the grid
+    context.strokeStyle = "#222222"; // Set grid color to black
+    context.lineWidth = 0.03; // Set line width for the grid
 
     // Draw vertical lines
     for (let x = 0; x < arena[0].length; x++) {
