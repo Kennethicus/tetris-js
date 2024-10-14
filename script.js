@@ -246,6 +246,7 @@ function stopGame(){
     
     // Stop the game loop
     cancelAnimationFrame(animationId);
+    drawGrid()
 }
 
 // Function to reset the player
@@ -377,7 +378,29 @@ function draw() {
     context.fillRect(0, 0, canvas.width, canvas.height);
     drawMatrix(arena, { x: 0, y: 0 });
     drawMatrix(player.matrix, player.pos);
+    drawGrid()
 }
 
+function drawGrid() {
+    context.strokeStyle = "#818283"; // Set grid color to black
+    context.lineWidth = 0.1; // Set line width for the grid
+
+    // Draw vertical lines
+    for (let x = 0; x < arena[0].length; x++) {
+        context.beginPath();
+        context.moveTo(x, 0);
+        context.lineTo(x, arena.length);
+        context.stroke();
+    }
+
+    // Draw horizontal lines
+    for (let y = 0; y < arena.length; y++) {
+        context.beginPath();
+        context.moveTo(0, y);
+        context.lineTo(arena[0].length, y);
+        context.stroke();
+    }
+}
+drawGrid()
 
 // Start the game when the page loads
